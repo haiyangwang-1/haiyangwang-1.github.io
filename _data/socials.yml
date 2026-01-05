@@ -2,8 +2,8 @@
 # the commented lines are the default social media links supported by the template
 # the socials will be displayed in the order they are defined here
 
-organization: Yale # your organization as appears in the subdomain
-username: HaiyangWang # your username
+# organization: Yale # your organization as appears in the subdomain
+# username: HaiyangWang # your username
 cv_pdf: /assets/pdf/cv2026.pdf # path to your CV PDF file
 email: haiyang.wang1024@gmail.com # your email address
 github_username: haiyangwang-1
