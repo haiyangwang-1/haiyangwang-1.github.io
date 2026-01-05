@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: haiyang.wang1024@gmail.com
+subtitle: 
 
 profile:
   align: right
@@ -26,5 +26,4 @@ latest_posts:
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
-
 Hi, I am Haiyang. I am currently a Ph.D. student in the department of applied&computational mathematics at Yale University.
