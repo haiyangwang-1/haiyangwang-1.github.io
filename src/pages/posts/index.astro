@@ -1,0 +1,15 @@
+---
+import { getCollection } from "astro:content";
+import BaseListing from "../../layouts/BaseListing.astro";
+import { PAGES } from "../../config";
+
+const posts = (await getCollection("posts")).filter((post) => !post.data.draft);
+---
+
+<BaseListing
+    collection="posts"
+    title={PAGES.blog.title}
+    subtitle={PAGES.blog.subtitle}
+    entries={posts}
+    emptyMessage="No posts yet. Research notes and technical explanations are forthcoming."
+/>

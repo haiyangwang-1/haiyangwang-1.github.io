@@ -1,0 +1,20 @@
+---
+import { getEntry, render } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const homeEntry = await getEntry("pages", "home");
+if (!homeEntry) throw new Error("Home content not found.");
+const { Content } = await render(homeEntry);
+---
+
+<BaseLayout title={homeEntry.data.title} description={homeEntry.data.description}>
+	<div class="container-narrow">
+		<header class="page-header home-header">
+			<h1 class="home-title">{homeEntry.data.title}</h1>
+			{homeEntry.data.subtitle && <p class="home-subtitle">{homeEntry.data.subtitle}</p>}
+		</header>
+		<div class="prose">
+			<Content />
+		</div>
+	</div>
+</BaseLayout>
