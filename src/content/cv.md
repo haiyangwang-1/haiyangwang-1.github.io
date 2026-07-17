@@ -1,11 +1,11 @@
 ---
 name: "Haiyang Wang"
-title: "Applied Mathematics Ph.D. Researcher"
+title: "Applied and Computational Math Ph.D. Student"
 experience:
   - role: "Ph.D. Researcher"
     institution: "Yale University"
     period: "Aug 2023–Present"
-    description: "Developing theory for machine learning with missing covariates and studying optimal input distributions for amplitude-constrained Gaussian channels."
+    description: "Exploring AI for mathematical discovery, developing theory for machine learning with missing covariates, and studying optimal input distributions for amplitude-constrained Gaussian channels."
   - role: "Research Analyst"
     institution: "Flatiron Institute, Simons Foundation"
     period: "Jan 2023–Jul 2023"
@@ -29,8 +29,3 @@ education:
 
 - **Haiyang Wang**, Luca Barletta, and Alex Dytso. “An improved lower bound on cardinality of support of the amplitude-constrained AWGN channel.” *IEEE Transactions on Information Theory*, 2026.
 - **Haiyang Wang**, Fredrik Fryklund, Samuel Potter, and Leslie Greengard. “Scattering theory for Stokes flow in complex branched structures.” *Journal of Computational Physics*, article 115148, 2026.
-
-## Technical Skills
-
-- **Programming:** Python, pandas, NumPy, SciPy, JAX, and PyTorch.
-- **Methods:** machine learning theory, statistical learning, gradient-boosted trees, deep learning, numerical PDEs, and boundary integral methods.

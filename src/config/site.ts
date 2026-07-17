@@ -3,7 +3,7 @@ import type { SiteConfig, ThemeConfig, SettingsConfig, UmamiAnalyticsConfig, Ana
 export const SITE: SiteConfig = {
     website: "https://haiyangwang-1.github.io/",
     author: "Haiyang Wang",
-    desc: "Academic portfolio and blog of Haiyang Wang, an Applied Mathematics Ph.D. researcher working in machine learning, information theory, and scientific computing.",
+    desc: "Academic portfolio and blog of Haiyang Wang, an Applied and Computational Mathematics Ph.D. student working on AI for mathematical discovery, learning theory, information theory,  numerical analysis, and scientific computing.",
     title: "Haiyang Wang",
     ogImage: "/og.png",
     postPerPage: 5,

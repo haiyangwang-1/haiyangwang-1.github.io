@@ -3,7 +3,7 @@ import type { PagesConfig } from "../types";
 export const PAGES: PagesConfig = {
     home: {
         title: "Home",
-        subtitle: "Research across mathematical theory and computational practice.",
+        subtitle: "Research across mathematical discovery, theory, and computation.",
         isActive: true,
     },
     blog: {

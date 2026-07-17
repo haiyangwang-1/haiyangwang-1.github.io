@@ -1,48 +1,37 @@
 ---
 title: "Applied mathematics for learning, information, and computation"
 subtitle: "Theory-minded research with an eye toward algorithms that work."
-description: "Haiyang Wang is an Applied Mathematics Ph.D. researcher at Yale University working in machine learning theory, information theory, and scientific computing."
+description: "Haiyang Wang is an Applied and Computational Mathematics Ph.D. student at Yale University working on AI for mathematical discovery, machine learning theory, information theory, and scientific computing."
 ---
 
-I am an Applied & Computational Mathematics Ph.D. student at **Yale University**. 
-My PhD advisors are professor Yihong Wu and professor Ronald Coifman. 
-My work connected mathematical structure with practical computation across machine learning, information theory, and numerical analysis. 
-And I am now shifting my focus to ASI. Particularly, I am interested in enabling AI to make meaningful and non-trivial mathematical discoveries. 
-
+I am a Ph.D. student in Applied and Computational Mathematics at **Yale University**, advised by Professors Yihong Wu and Ronald Coifman. My research connects mathematical structure with practical computation across machine learning, information theory, and numerical analysis. I am now increasingly focused on enabling AI to make meaningful, nontrivial mathematical discoveries.
 
 ## Research directions
 
-### Enabling AI to make meaningful and non-trivial mathematical discoveries
+### AI for mathematical discovery
 
-Just started, no result yet. But this is my primary focus right now. 
-
+This is a new direction and my primary focus. I am exploring how AI systems can move beyond routine assistance to formulate, investigate, and help establish substantive mathematical insights.
 
 ### Machine learning theory
 
 I study the statistical foundations of gradient-boosted trees, including convergence, principled parameter choices, and learning with missing covariates.
 
 ### Information theory
+
 > **2026 IEEE Jack Keil Wolf ISIT Student Paper Award** — one of three winners among more than 400 eligible papers.
 
-I investigate amplitude-constrained Gaussian channels through a novel and powerful perspective of approximation theory. 
-This new method produced a new super-linear lower bound on the support size of capacity-achieving input distributions, and it has been extended and applied to a family of optimal distribution type problems. 
+I study amplitude-constrained Gaussian channels through the lens of approximation theory. This perspective yielded a new superlinear lower bound on the support size of capacity-achieving input distributions and is now being extended to a broader family of optimal-distribution problems.
 
-Much of my theoretical insights on this problem came from the numerical computations which I developed carefully for this problem. My numerical computation has achieved the accuracy in the order of double precision machine epsilon, where most of the previous researchers failed to achieve and possibly misled them to possibly incorrect theoretical insights and conjectures. 
-
-
-I have an on-going related project, which applies transcendental geometry to an optimal distribution type problem that arises from statistics. 
-
+High-accuracy numerical experiments played an important role in developing the theory. I built computations that approach double-precision machine accuracy, revealing patterns that helped guide proofs and reassess earlier conjectures. In related ongoing work, I am applying ideas from transcendental geometry to an optimal-distribution problem arising in statistics.
 
 ### Scientific computing
 
-I develop fast numerical solvers for PDEs and integral equations. At the Flatiron Institute, I helped build a high-order scattering method for Stokes flow that achieved a **100× speedup** in large channel geometries. While at Flatiron, I have also been a contributor to [chunkIE](https://github.com/fastalgorithms/chunkie), a MATLAB integral-equation toolbox. 
-
+I develop fast numerical solvers for PDEs and integral equations. At the Flatiron Institute, I helped build a high-order scattering method for Stokes flow that achieved a **100× speedup** in large channel geometries. I also contributed to [chunkIE](https://github.com/fastalgorithms/chunkie), a MATLAB integral-equation toolbox.
 
 ## Selected work
 
 - [An improved lower bound on cardinality of support of the amplitude-constrained AWGN channel](/publications/improved-lower-bound-awgn/), *IEEE Transactions on Information Theory*, 2026.
 - [Scattering theory for Stokes flow in complex branched structures](/publications/scattering-theory-stokes-flow/), *Journal of Computational Physics*, 2026.
-
 
 ## Writing
 
