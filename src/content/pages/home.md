@@ -18,7 +18,7 @@ I study the statistical foundations of gradient-boosted trees, including converg
 
 ## Information theory
 
-> **2026 IEEE Jack Keil Wolf ISIT Student Paper Award** — one of three winners among more than 400 eligible papers.
+> **2026 IEEE Jack Keil Wolf ISIT Student Paper Award** — one of three winners among more than 400 eligible papers in the flagship conference of IEEE Information Theory Society.
 
 I study amplitude-constrained Gaussian channels through the lens of approximation theory. This perspective yielded a new superlinear lower bound on the support size of capacity-achieving input distributions and is now being extended to a broader family of optimal-distribution problems.
 
