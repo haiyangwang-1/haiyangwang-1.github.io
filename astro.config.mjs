@@ -4,6 +4,7 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import sitemap from '@astrojs/sitemap';
 import { unified } from '@astrojs/markdown-remark';
+import remarkMathStatements from './src/remarkMathStatements.mjs';
 
 import tailwindcss from '@tailwindcss/vite';
 
@@ -11,7 +12,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   markdown: {
     processor: unified({
-      remarkPlugins: [remarkMath],
+      remarkPlugins: [remarkMathStatements, remarkMath],
       rehypePlugins: [rehypeKatex],
     }),
   },

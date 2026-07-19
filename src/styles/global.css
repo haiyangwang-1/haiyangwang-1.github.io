@@ -768,6 +768,40 @@ a:hover,
     font-style: italic;
 }
 
+.prose .math-statement {
+    display: block;
+    margin: 1.5rem 0;
+    padding: 1rem 1.125rem;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 0.35rem;
+    background: color-mix(in srgb, var(--surface) 72%, transparent);
+    font-style: normal;
+}
+
+.prose .math-statement > :first-child {
+    margin-top: 0;
+}
+
+.prose .math-statement > :last-child {
+    margin-bottom: 0;
+}
+
+.prose .math-statement p {
+    opacity: 1;
+}
+
+.prose .theorem-block,
+.prose .proposition-block,
+.prose .corollary-block {
+    border-left-width: 5px;
+}
+
+.prose .definition-block,
+.prose .remark-block {
+    border-left-color: var(--text-muted);
+}
+
 .prose hr {
     border: none;
     border-top: 1px solid var(--border);
