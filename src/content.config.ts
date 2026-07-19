@@ -28,6 +28,11 @@ const posts = defineCollection({
         tags: z.array(z.string()).optional(),
         external_url: z.string().optional(),
         image: z.string().optional(),
+        citation: z.object({
+            institution: z.string(),
+            reportNumber: z.string().optional(),
+            pdf: z.string(),
+        }).optional(),
     }),
 });
 

@@ -5,7 +5,15 @@ description: "A technical proof of a superlinear lower bound on the number of sp
 author: "Haiyang Wang"
 draft: false
 tags: ["information theory", "gaussian channels", "approximation theory"]
+citation:
+  institution: "Yale University"
+  reportNumber: "HW-TR-2026-01"
+  pdf: "/posts/technical-proof-extension-to-higher-dimensional-gaussian-channels/technical-proof-extension-to-higher-dimensional-gaussian-channels.pdf"
 ---
+
+> **Abstract.** We prove that, in every fixed dimension $d\ge2$, the capacity-achieving input distribution for the amplitude-constrained vector Gaussian channel must use at least order $A\sqrt{\log A}$ concentric spherical shells. The proof extends the scalar support-size method by combining near-optimality of the uniform input, an $L^2$ approximation lower bound, and a bridge from relative entropy to $L^2$ distance. Its main new ingredient is a Slepian-mode argument that separates radial and angular degrees of freedom on the ball.
+
+**Technical report HW-TR-2026-01, 19 July 2026.** [Download the PDF](/posts/technical-proof-extension-to-higher-dimensional-gaussian-channels/technical-proof-extension-to-higher-dimensional-gaussian-channels.pdf) · [Download BibTeX](/posts/technical-proof-extension-to-higher-dimensional-gaussian-channels/technical-proof-extension-to-higher-dimensional-gaussian-channels.bib)
 
 # Main result
 
@@ -37,7 +45,7 @@ p_\rho(y)=\int_{B_A}\phi _d(y-x)\,d\rho(x), \qquad \phi_d(y)=\frac{1}{(2\pi)^{d/
 $$
 
 
-The main result of this note is the following fixed-dimensional asymptotic lower bound, extending the scalar AWGN result in our previous paper.
+The main result of this note is the following fixed-dimensional asymptotic lower bound, extending our scalar AWGN results in [Wang](https://arxiv.org/abs/2510.20723) and [Wang, Barletta, and Dytso](https://doi.org/10.1109/TIT.2026.3697668).
 
 > **Theorem (shell-count lower bound).** For each fixed $d\ge2$, and sufficiently large $A$
 >
@@ -121,7 +129,7 @@ Step 2, the approximation theory lower bound, is the key difficulty. In the rest
 
 ## Approximation lower bound
 
-### 3.1 Precise statement and conventions
+### Precise statement and conventions
 
 For simplicity, fix $d\ge2$, take $A$ to be sufficiently large, and let
 
@@ -139,7 +147,7 @@ The goal is to prove (Eq. Approx. lower bound). The argument has three component
 
 Choosing $\Omega\asymp K$ then gives the desired exponent.
 
-### 3.2 Fourier setup and the projection kernel
+### Fourier setup and the projection kernel
 
 We use the unitary Fourier transform
 
@@ -156,7 +164,7 @@ $$
 PW_\Omega=\{f\in L^2(\mathbb R^d):\widehat f(\xi)=0\text{ for }\xi\notin B_\Omega\}.
 $$
 
-Thus $PW_\Omega$ is simply the space of functions with no frequencies larger than $\Omega$. Let $P_\Omega: L^2(\R^d)\to PW_{\Omega}$ be the projection:
+Thus $PW_\Omega$ is simply the space of functions with no frequencies larger than $\Omega$. Let $P_\Omega: L^2(\mathbb R^d)\to PW_{\Omega}$ be the projection:
 $$
 \widehat{P_\Omega f}=1_{B_\Omega}\widehat f.
 $$
@@ -212,7 +220,7 @@ $$
 
 Substituting $\nu=d/2$ and $t=\Omega\|z\|$ into the kernel formula proves (Eq. Kernel decay). $\square$
 
-### 3.3 Slepian modes and the volume-order count
+### Slepian modes and the volume-order count
 
 Let $M_{B_1}:L^2(\mathbb R^d)\to L^2(\mathbb R^d)$ denote multiplication by the indicator $1_{B_1}$. Define the concentration operator on $L^2(\mathbb R^d)$ by
 
@@ -304,10 +312,11 @@ $$
 &=\int_{B_1}\int_{B_1}|\mathcal K_\Omega(x-y)|^2\,dy\,dx.
 \end{aligned}
 $$
-where we used the following facts
-- multiplicative rotational invariance of trace
-- $R_\Omega R_\Omega^*$ is a self-adjoint integral operator with kernel
-  $$1_{B_1}(x)\mathcal K_\Omega(x-y)1_{B_1}(y)$$
+Here we used cyclicity of the trace and the fact that $R_\Omega R_\Omega^*$ is the self-adjoint integral operator with kernel
+
+$$
+1_{B_1}(x)\mathcal K_\Omega(x-y)1_{B_1}(y).
+$$
 
 
 
@@ -354,7 +363,7 @@ $$
 which leads to the dominant mode count $N_\Omega \asymp \Omega^d$.
 
 
-### 3.4 Spherical harmonics and the surface-order count
+### Spherical harmonics and the surface-order count
 
 The preceding count uses only volume. To see what a single sphere can contribute, we must separate radial and angular behavior.
 
@@ -539,7 +548,7 @@ $$
 
 which proves (Eq. Angular count). $\square$
 
-### 3.5 Normalized features on the input ball
+### Normalized features on the input ball
 
 For each retained Slepian mode, define
 
@@ -599,7 +608,7 @@ $$
 
 $\square$
 
-### 3.6 One shell has only surface-order rank
+### One shell has only surface-order rank
 
 For a probability law $\rho$ on $B_A$, define its feature covariance matrix
 
@@ -664,7 +673,7 @@ $$
 
 Here every singular value $\sigma_j(I_{N_\Omega})$ equals $1$. Equivalently, $T_\Omega(\rho)$ has a null space of dimension at least $N_\Omega/2$, and $\Delta_\Omega$ acts as $-I$ on that null space. This is the vector analogue of the scalar Toeplitz rank defect.
 
-### 3.7 Transfer through Gaussian smoothing
+### Transfer through Gaussian smoothing
 
 The matrix defect concerns expectations of functions of the input. We now build a test function that reads the same defect from the output density.
 
@@ -725,7 +734,7 @@ $$
 
 The last line uses $\Omega=\kappa_dK$. Multiplying by $A^d$ proves (Eq. Approx. lower bound).
 
-## 4. Step 1: Jeffreys is near the CAID
+## Step 1: Jeffreys is near the CAID
 
 Let $\mathsf C_d(A)$ be the channel capacity. For any input law $\rho$ on $B_A$, the capacity-achieving output satisfies the stability identity
 
@@ -766,7 +775,7 @@ $$
 
 which proves (Eq. Jeffreys–CAID).
 
-## 5. Step 3: bridging Steps 1 and 2
+## Step 3: bridging Steps 1 and 2
 
 We next show that the reverse KL divergence in Step 1 controls the $L^2$ distance in Step 2. The key fact is that both output densities have height of order at most $A^{-d}$.
 
@@ -874,13 +883,13 @@ $$
 which proves (Eq. Bridge).
 
 
-### Remarks on dimension-dependent constants
+## Remarks on dimension-dependent constants
 
 The notation $\lesssim_d$ and $\gtrsim_d$ hides multiplicative constants depending only on the fixed dimension. They enter through the volume $V_d$, the vector capacity bound, the multiplicities of spherical harmonics, the Bessel estimates, and the choice of the proportionality factor in $\Omega\asymp K$.
 
 The exponent constant $c_d$ is displayed because changing it changes the scale of $K_A^2/A^2$ and cannot be absorbed into an outside prefactor. No attempt is made here to optimize this constant or to obtain a bound uniform in growing dimension. The statement is asymptotic in $A$ for each fixed $d$.
 
-## 7. Conclusion
+# Conclusion
 
 The proof can be summarized by the chain
 
@@ -898,11 +907,17 @@ $$
 
 The Slepian modes provide volume-order many probes of the ball, while a single spherical shell can activate only surface-order many angular channels. Choosing the spectral radius proportional to the number of shells creates the missing directions that survive Gaussian smoothing strongly enough to contradict near-optimality unless $K_A$ has the asserted size.
 
-## References
+# Suggested citation
 
-- A. Dytso, S. Yagli, H. V. Poor, and S. Shamai, [*The Capacity Achieving Distribution for the Amplitude Constrained Additive Gaussian Channel: An Upper Bound on the Number of Mass Points*](https://arxiv.org/abs/1901.03264).
-- A. Thangaraj, G. Kramer, and G. Böcherer, [*Capacity Bounds for Discrete-Time, Amplitude-Constrained, Additive White Gaussian Noise Channels*](https://arxiv.org/abs/1511.08742).
-- H. J. Landau and H. Widom, [*Eigenvalue Distribution of Time and Frequency Limiting*](https://doi.org/10.1016/0022-247X(80)90241-3).
-- C. Müller, [*Spherical Harmonics*](https://link.springer.com/book/10.1007/BFb0094775), Chapter 9 (Funk--Hecke formula).
-- Z. Khalid, R. A. Kennedy, and J. D. McEwen, [*Slepian Spatial-Spectral Concentration on the Ball*](https://arxiv.org/abs/1403.5553).
-- C. Frye and C. J. Efthimiou, [*Spherical Harmonics in $p$ Dimensions*](https://arxiv.org/abs/1205.3548).
+H. Wang, “Technical proof of the extension to higher-dimensional Gaussian channels,” Technical Report HW-TR-2026-01, Yale University, 2026. [PDF](/posts/technical-proof-extension-to-higher-dimensional-gaussian-channels/technical-proof-extension-to-higher-dimensional-gaussian-channels.pdf) · [BibTeX](/posts/technical-proof-extension-to-higher-dimensional-gaussian-channels/technical-proof-extension-to-higher-dimensional-gaussian-channels.bib)
+
+# References
+
+1. H. Wang, [*Super-Linear Growth of the Capacity-Achieving Input Support for the Amplitude-Constrained AWGN Channel*](https://arxiv.org/abs/2510.20723), arXiv:2510.20723, 2025.
+2. H. Wang, L. Barletta, and A. Dytso, [*An Improved Lower Bound on Cardinality of Support of the Amplitude-Constrained AWGN Channel*](https://doi.org/10.1109/TIT.2026.3697668), *IEEE Transactions on Information Theory*, vol. 72, no. 8, pp. 5392–5399, 2026, doi:10.1109/TIT.2026.3697668.
+3. A. Dytso, S. Yagli, H. V. Poor, and S. Shamai, [*The Capacity Achieving Distribution for the Amplitude Constrained Additive Gaussian Channel: An Upper Bound on the Number of Mass Points*](https://arxiv.org/abs/1901.03264), *IEEE Transactions on Information Theory*, vol. 66, no. 4, pp. 2006–2022, 2020, doi:10.1109/TIT.2019.2948636.
+4. A. Thangaraj, G. Kramer, and G. Böcherer, [*Capacity Bounds for Discrete-Time, Amplitude-Constrained, Additive White Gaussian Noise Channels*](https://arxiv.org/abs/1511.08742), *IEEE Transactions on Information Theory*, vol. 63, no. 7, pp. 4172–4182, 2017, doi:10.1109/TIT.2017.2692214.
+5. H. J. Landau and H. Widom, [*Eigenvalue Distribution of Time and Frequency Limiting*](https://doi.org/10.1016/0022-247X(80)90241-3), *Journal of Mathematical Analysis and Applications*, vol. 77, no. 2, pp. 469–481, 1980.
+6. C. Müller, [*Spherical Harmonics*](https://link.springer.com/book/10.1007/BFb0094775), Lecture Notes in Mathematics 17, Springer, 1966, Chapter 9.
+7. Z. Khalid, R. A. Kennedy, and J. D. McEwen, [*Slepian Spatial-Spectral Concentration on the Ball*](https://arxiv.org/abs/1403.5553), *Applied and Computational Harmonic Analysis*, vol. 40, no. 3, pp. 470–504, 2016, doi:10.1016/j.acha.2015.03.008.
+8. C. Frye and C. J. Efthimiou, [*Spherical Harmonics in $p$ Dimensions*](https://arxiv.org/abs/1205.3548), arXiv:1205.3548, 2012.

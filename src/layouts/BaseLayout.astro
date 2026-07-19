@@ -39,6 +39,14 @@ interface Props {
     ogImage?: string;
     ogType?: "website" | "article";
     robots?: "index, follow" | "noindex, nofollow";
+    citation?: {
+        title: string;
+        authors: string[];
+        publicationDate: string;
+        institution: string;
+        reportNumber?: string;
+        pdfUrl: string;
+    };
 }
 
 const {
@@ -46,23 +54,41 @@ const {
     description = SITE.desc,
     ogImage = SITE.ogImage,
     ogType = "website",
-    robots = "index, follow"
+    robots = "index, follow",
+    citation,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site || SITE.website);
+const citationPublicationDate = citation?.publicationDate.replaceAll("-", "/");
 
-const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: SITE.author,
-    url: SITE.website,
-    jobTitle: "Applied and Computational Mathematics Ph.D. Student",
-    affiliation: {
-        "@type": "CollegeOrUniversity",
-        name: "Yale University",
-    },
-    description: SITE.desc,
-};
+const jsonLd = citation
+    ? {
+        "@context": "https://schema.org",
+        "@type": "ScholarlyArticle",
+        headline: citation.title,
+        author: citation.authors.map((name) => ({ "@type": "Person", name })),
+        datePublished: citation.publicationDate,
+        publisher: { "@type": "Organization", name: citation.institution },
+        url: canonicalURL.href,
+        encoding: {
+            "@type": "MediaObject",
+            contentUrl: citation.pdfUrl,
+            encodingFormat: "application/pdf",
+        },
+        description,
+    }
+    : {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: SITE.author,
+        url: SITE.website,
+        jobTitle: "Applied and Computational Mathematics Ph.D. Student",
+        affiliation: {
+            "@type": "CollegeOrUniversity",
+            name: "Yale University",
+        },
+        description: SITE.desc,
+    };
 ---
 
 <!doctype html>
@@ -85,6 +111,22 @@ const jsonLd = {
         <meta name="title" content={`${title} | ${SITE.title}`} />
         <meta name="description" content={description} />
         <meta name="author" content={SITE.author} />
+
+        <!-- Google Scholar / Highwire Press metadata -->
+        {citation && (
+            <>
+                <meta name="citation_title" content={citation.title} />
+                {citation.authors.map((author) => (
+                    <meta name="citation_author" content={author} />
+                ))}
+                <meta name="citation_publication_date" content={citationPublicationDate} />
+                <meta name="citation_technical_report_institution" content={citation.institution} />
+                {citation.reportNumber && (
+                    <meta name="citation_technical_report_number" content={citation.reportNumber} />
+                )}
+                <meta name="citation_pdf_url" content={citation.pdfUrl} />
+            </>
+        )}
 
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content={ogType} />

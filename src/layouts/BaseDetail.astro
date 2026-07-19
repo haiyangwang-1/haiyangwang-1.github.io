@@ -31,9 +31,19 @@ if (detail.extraInput) {
 
 const description = entry.data.description || detail.description || SITE.desc;
 const ogImage = entry.data.image || SITE.ogImage;
+const citation = entry.data.citation
+    ? {
+        title: detail.title,
+        authors: [entry.data.author || SITE.author],
+        publicationDate: entry.data.date,
+        institution: entry.data.citation.institution,
+        reportNumber: entry.data.citation.reportNumber,
+        pdfUrl: new URL(entry.data.citation.pdf, SITE.website).href,
+    }
+    : undefined;
 ---
 
-<BaseLayout title={detail.title} description={description} ogImage={ogImage} ogType="article">
+<BaseLayout title={detail.title} description={description} ogImage={ogImage} ogType="article" citation={citation}>
     <div class="flex justify-between items-center mb-4">
         <BackLink href={detail.backHref} label={collection} />
         {detail.externalUrl && (
